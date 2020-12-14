@@ -102,8 +102,8 @@ int main(int argc, char **argv) {
   
   int pipefd[2];
   pipe(pipefd);
-
-  for (int i = 0; i < pnum; i++) {
+  int i;
+  for (i = 0; i < pnum; i++) {
     pid_t child_pid = fork();
     if (child_pid >= 0) {
       // successful fork
@@ -149,7 +149,7 @@ int main(int argc, char **argv) {
   min_max.min = INT_MAX;
   min_max.max = INT_MIN;
 
-  for (int i = 0; i < pnum; i++) {
+  for (i = 0; i < pnum; i++) {
     struct MinMax Min_Max;
     Min_Max.min = INT_MAX;
     Min_Max.max = INT_MIN;
